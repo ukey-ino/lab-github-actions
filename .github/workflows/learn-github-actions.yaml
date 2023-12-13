@@ -17,12 +17,4 @@ jobs:
     uses: ./.github/workflows/second.yaml
   call-third:
     needs: [call-first, call-second]
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Checkout"
-        uses: actions/checkout@v4
-      - name: "Echo Message2"
-        run: |
-          echo "TEST TEST TEST"
-      - name: "Call Third"
-        uses: ./.github/workflows/third.yaml
+    uses: ./.github/workflows/third.yaml
