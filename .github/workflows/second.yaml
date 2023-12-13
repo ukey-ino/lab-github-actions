@@ -1,4 +1,4 @@
-name: first-workflow
+name: second-workflow
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: 
   workflow_dispatch:
@@ -9,4 +9,4 @@ jobs:
     steps:
       - name: "Echo Message"
         run: |
-          echo "FIRST"
+          echo "SECOND"
