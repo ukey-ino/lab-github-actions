@@ -13,3 +13,14 @@ jobs:
           echo "TEST TEST TEST"
   call-first:
     uses: ./.github/workflows/first.yaml
+  call-second:
+    uses: ./.github/workflows/second.yaml
+  call-third:
+    needs: [call-first, call-second]
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Echo Message2"
+        run: |
+          echo "TEST TEST TEST"
+      - name: "Call Third"
+        uses: ./.github/workflows/third.yaml
