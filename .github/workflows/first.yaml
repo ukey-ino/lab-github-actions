@@ -2,14 +2,11 @@ name: learn-github-actions
 run-name: ${{ github.actor }} is learning GitHub Actions
 on: 
   workflow_dispatch:
+  workflow_call:
 jobs:
-  check-test-message:
+  other-message:
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout"
-        uses: actions/checkout@v4
       - name: "Echo Message"
         run: |
-          echo "TEST TEST TEST"
-  call-first:
-    uses: ./.github/workflows/first.yaml
+          echo "FIRST"
